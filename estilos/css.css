@@ -1,0 +1,18 @@
+@import url("./bootstrap.css");
+@import url("./fuentes.css");
+*{
+    font-family: comforta;
+}
+button{
+    border-radius: 5px;
+}
+.backgroundNiños{
+    background: url("../img/niños.jpg") no-repeat;
+    background-size: cover;
+}
+.roundedBorder{
+    border-radius: 10px;
+}
+.blackShadow{
+    text-shadow: black 2px 2px;
+}
