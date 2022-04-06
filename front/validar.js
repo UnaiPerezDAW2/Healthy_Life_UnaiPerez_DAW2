@@ -1,3 +1,5 @@
+import * as functions from "modulo.js";
+
 window.onload = () => {
     let divrange = document.getElementById('valueOfRange');
     let range = document.getElementById('dineroHora');
