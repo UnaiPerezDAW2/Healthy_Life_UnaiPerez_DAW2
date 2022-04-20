@@ -1,4 +1,4 @@
-import * as functions from "modulo.js";
+import {empty} from './modulo.js';
 
 window.onload = () => {
     let divrange = document.getElementById('valueOfRange');
