@@ -147,7 +147,7 @@ input[type=range] {
   transition-duration: 3s;
 }
 
-@keyframes animation {
+/* @keyframes animation {
   from {
     visibility: visible;
     opacity: 1;
@@ -156,4 +156,4 @@ input[type=range] {
     visibility: hidden;
     opacity: 0;
   }
-}
+} */
