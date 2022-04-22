@@ -21,6 +21,8 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
+    <link rel="shortcut icon" href="./img/LogoH.ico" type="image/x-icon">
+
 </head>
 
 <body>
@@ -45,8 +47,8 @@
     </header>
     <main>
         <section class="container-fluid pb-lg-5 pt-lg-5 backgroundNiños">
-            <article class="col-lg-5 m-auto" id="divModal">
-                <div class="cookiesModal" tabindex="-1" role="dialog" id="modal">
+            <article class="col-lg-5" id="divModal" tabindex="-101">
+                <div class="cookiesModal" tabindex="-100" role="dialog" id="modal">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -74,15 +76,14 @@
                     <h3>Correo electrónico</h3>
                     <div class="form-group">
                         <label class="d-none" for="Jornada"></label>
-                        <input type="text" class="form-control col-lg-5 m-auto" name="" id="" aria-describedby="helpId"
-                            placeholder="">
+                        <input type="text" class="form-control col-lg-5 m-auto needToVeriffy" name="email" id="email" placeholder="Introduce su email">
                     </div>
                 </article>
                 <article class="row text-center d-block mt-5">
                     <h3>Tipo de cuidado</h3>
                     <div class="form-group">
                         <label class="d-none" for="Jornada"></label>
-                        <select class="form-control col-lg-5 m-auto" name="tipoCuidado" id="tipoCuidado">
+                        <select class="form-control col-lg-5 m-auto needToVeriffy" name="tipoCuidado" id="tipoCuidado">
                             <option value="default">Seleccione tipo de cuidado</option>
                             <option value="niños">Niño/a</option>
                             <option value="personamayor">Persona mayor</option>
@@ -94,7 +95,7 @@
                     <h3>Disponibilidad</h3>
                     <div class="form-group">
                         <label class="d-none" for="Jornada"></label>
-                        <select class="form-control col-lg-5 m-auto" name="" id="">
+                        <select class="form-control col-lg-5 m-auto needToVeriffy" name="disponibilidad" id="disponibilidad">
                             <option value="default">Seleccione disponibilidad</option>
                             <option>Media jornada</option>
                             <option>Jornada parcial</option>
@@ -119,7 +120,7 @@
                     <h3>Formación</h3>
                     <div class="form-group">
                         <label class="d-none" for="Localidad"></label>
-                        <select class="form-control col-lg-5 m-auto" name="" id="" multiple>
+                        <select class="form-control col-lg-5 m-auto needToVeriffy" name="formacion" id="formacion" multiple required>
                             <option>Ninguna</option>
                             <option>Experimentado/a en cuidados, 2 años mínimo</option>
                             <option>Profesor/a de infantil</option>

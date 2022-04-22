@@ -1,4 +1,4 @@
-import {empty} from './modulo.js';
+import {empty, emailPatron, regularExpresionVeriffier} from './modulo.js';
 
 window.onload = () => {
     let divrange = document.getElementById('valueOfRange');
@@ -9,6 +9,8 @@ window.onload = () => {
 
     let cookiesModal = document.querySelector('#cookiesModal');
     let modal = document.querySelector('.cookiesModal');
+
+    let verifiedData = document.querySelectorAll('.needToVeriffy');
 
     select.addEventListener('change', function (e) {
         let image = new Image();
@@ -26,7 +28,22 @@ window.onload = () => {
 
     cookiesModal.addEventListener('click', function(){
         modal.classList.add('right-5000');
+        setTimeout(() => {
+            modal.classList.remove('right-5000');
+            modal.classList.add('d-none');
+        }, 2000);
     });
+
+    verifiedData.forEach(element => {
+        element.addEventListener('blur', function(){
+            if(empty(element.value)){
+                element.style.border = '2px solid red';
+            } else {
+                element.style.border = '2px solid green';
+            }
+        });
+    });
+
 }
 
 function reload(){
