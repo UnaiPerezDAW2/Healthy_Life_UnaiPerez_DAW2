@@ -7,6 +7,9 @@ window.onload = () => {
     let sectionBackground = document.querySelector('.backgroundNiños');
     let select = document.querySelector('#tipoCuidado');
 
+    let cookiesModal = document.querySelector('#cookiesModal');
+    let modal = document.querySelector('.cookiesModal');
+
     select.addEventListener('change', function (e) {
         let image = new Image();
         image.src = `img/${select.value}.jpg`;
@@ -20,6 +23,10 @@ window.onload = () => {
     range.onchange = () => {
         divrange.innerHTML = range.value;
     }    
+
+    cookiesModal.addEventListener('click', function(){
+        modal.classList.add('right-5000');
+    });
 }
 
 function reload(){
