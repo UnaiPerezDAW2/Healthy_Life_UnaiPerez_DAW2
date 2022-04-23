@@ -7,9 +7,6 @@ window.onload = () => {
     let sectionBackground = document.querySelector('.backgroundNiños');
     let select = document.querySelector('#tipoCuidado');
 
-    let cookiesModal = document.querySelector('#cookiesModal');
-    let modal = document.querySelector('.cookiesModal');
-
     let verifiedData = document.querySelectorAll('.needToVeriffy');
 
     select.addEventListener('change', function (e) {
@@ -25,14 +22,6 @@ window.onload = () => {
     range.onchange = () => {
         divrange.innerHTML = range.value;
     }    
-
-    cookiesModal.addEventListener('click', function(){
-        modal.classList.add('right-5000');
-        setTimeout(() => {
-            modal.classList.remove('right-5000');
-            modal.classList.add('d-none');
-        }, 2000);
-    });
 
     verifiedData.forEach(element => {
         element.addEventListener('blur', function(){

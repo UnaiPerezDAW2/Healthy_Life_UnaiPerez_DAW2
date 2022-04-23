@@ -27,26 +27,10 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-info text-light">
-            <a class="navbar-brand text-light font-weight-bold blackShadow" style="font-size: 1.6em;" href="#"
-                id="locationReload" onclick="reload()">Healthy Life</a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
-                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <button class="btn btn-outline-light mr-lg-2 my-2 my-sm-0" type="submit">Inicia sesión</button>
-                    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cierra sesión</button>
-                </form>
-            </div>
-        </nav>
+
     </header>
     <main>
-        <section class="container-fluid pb-lg-5 pt-lg-5 backgroundNiños">
+        <section>
             <article class="col-lg-5" id="divModal" tabindex="-101">
                 <div class="cookiesModal" tabindex="-100" role="dialog" id="modal">
                     <div class="modal-dialog" role="document">
@@ -64,99 +48,16 @@
                                 </p>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal" id="cookiesModal">Aceptar y cerrar</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" id="cookiesModal">Aceptar</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" id="rejectModal">Rechazar</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </article>
-            <h2 class="d-none">Healthy Life</h2>
-            <form action="back/database.php" method="post">
-                <article class="row text-center d-block">
-                    <h3>Correo electrónico</h3>
-                    <div class="form-group">
-                        <label class="d-none" for="Jornada"></label>
-                        <input type="text" class="form-control col-lg-5 m-auto needToVeriffy" name="email" id="email" placeholder="Introduce su email">
-                    </div>
-                </article>
-                <article class="row text-center d-block mt-5">
-                    <h3>Tipo de cuidado</h3>
-                    <div class="form-group">
-                        <label class="d-none" for="Jornada"></label>
-                        <select class="form-control col-lg-5 m-auto needToVeriffy" name="tipoCuidado" id="tipoCuidado">
-                            <option value="default">Seleccione tipo de cuidado</option>
-                            <option value="niños">Niño/a</option>
-                            <option value="personamayor">Persona mayor</option>
-                            <option value="discapacitada">Persona discapacitada</option>
-                        </select>
-                    </div>
-                </article>
-                <article class="row text-center d-block mt-5">
-                    <h3>Disponibilidad</h3>
-                    <div class="form-group">
-                        <label class="d-none" for="Jornada"></label>
-                        <select class="form-control col-lg-5 m-auto needToVeriffy" name="disponibilidad" id="disponibilidad">
-                            <option value="default">Seleccione disponibilidad</option>
-                            <option>Media jornada</option>
-                            <option>Jornada parcial</option>
-                            <option>Jornada completa</option>
-                        </select>
-                    </div>
-                </article>
-                <article class="col-lg-12 text-center mt-5">
-                    <h3>¿Cuánto le gustaría pagar por los servicios? (€/H)</h3>
-                    <div class="mt-5">
-                        <label for="dineroHora" class="d-none">Dinero por hora</label>
-                        <input type="range" name="dineroHora" id="dineroHora" min="9" max="15" step="1" value="12"
-                            class="col-lg-5 m-auto">
-                        <div>
-                            <p id="valueOfRange" class="font-weight-bold d-inline-block" style="font-size: 1.2em;">
-                            </p>
-                            <span>€</span>
-                        </div>
-                    </div>
-                </article>
-                <article class="mt-4 text-center">
-                    <h3>Formación</h3>
-                    <div class="form-group">
-                        <label class="d-none" for="Localidad"></label>
-                        <select class="form-control col-lg-5 m-auto needToVeriffy" name="formacion" id="formacion" multiple required>
-                            <option>Ninguna</option>
-                            <option>Experimentado/a en cuidados, 2 años mínimo</option>
-                            <option>Profesor/a de infantil</option>
-                            <option>Auxiliar de enfermería</option>
-                        </select>
-                    </div>
-                </article>
-                <article class="mt-5 text-center mb-4">
-                    <h3>Localidad</h3>
-                    <div class="form-check bg-light col-lg-4 m-lg-auto roundedBorder">
-                        <div class="p-1">
-                            <input type="radio" name="formacion" id="" value="checkedValue" checked>
-                            <label class="form-check-label">Rotxapea</label>
-                        </div>
-                        <div class="p-1">
-                            <input type="radio" name="formacion" id="" value="checkedValue">
-                            <label class="form-check-label">Pamplona Centro</label>
-                        </div>
-                        <div class="p-1">
-                            <input type="radio" name="formacion" id="" value="checkedValue">
-                            <label class="form-check-label">Burlada</label>
-                        </div>
-                        <div class="p-1">
-                            <input type="radio" name="formacion" id="" value="checkedValue">
-                            <label class="form-check-label">Barañain</label>
-                        </div>
-                    </div>
-                </article>
-                <button type="submit" class="btn btn-primary m-auto d-block pr-5 pl-5" id="submit">Búsqueda</button>
-            </form>
         </section>
     </main>
-    <footer class="p-5 text-center bg-info text-light">
-        <span class="font-weight-bold" style="font-size: 1.6em;">Realizado por Unai Pérez, alumno de 2º DAW</span>
-    </footer>
 </body>
-<script type='module' src='./front/validar.js'></script>
+<script type='module' src='./front/homePage.js'></script>
 
 </html>
