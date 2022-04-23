@@ -26,37 +26,104 @@
 </head>
 
 <body>
-    <header>
-
+    <header class="bg-gradient2 p-5">
+        <img src="./img/LogoH.ico" alt="Logo" class="transformOpacity imgLogo">
     </header>
     <main>
-        <section>
+        <section class="container-fluid bg-gradient p-5">
             <article class="col-lg-5" id="divModal" tabindex="-101">
                 <div class="cookiesModal" tabindex="-100" role="dialog" id="modal">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h2 class="modal-title">¿En qué se basa Healthy Life?</h5>
+                            <div class="modal-header bg-cookies">
+                                <h2 class="modal-title modalText">¿En qué se basa Healthy Life?</h5>
                             </div>
                             <div class="modal-body">
                                 <p>Healthy Life trata de satisfacer la necesidad de cuidar a personas. Tanto niños, como
                                     gente mayor y gente discapacitada.
-                                    Mediante el siguiente formulario usted podrá encontrar una diversa cantidad de personas
+                                    Mediante el siguiente formulario usted podrá encontrar una diversa cantidad de
+                                    personas
                                     dispuestas a ayudarle.
-                                    Si acepta, nos da el consentimiento de poder almacenar sus datos para futuras ocasiones.
+                                    Si acepta, nos da el consentimiento de poder almacenar sus datos para futuras
+                                    ocasiones.
                                     ¡Gracias por su confianza! :)
                                 </p>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal" id="cookiesModal">Aceptar</button>
-                                <button type="button" class="btn btn-danger" data-dismiss="modal" id="rejectModal">Rechazar</button>
+                            <div class="modal-footer bg-cookies">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                    id="cookiesModal">Aceptar</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                    id="rejectModal">Rechazar</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </article>
+            <article class="col-12">
+                <h1>HEALTHY LIFE</h1>
+                <div class="col-6 float-right">
+                    <img src="./img/Collage.png" class="col-10 ml-5" alt="">
+                </div>
+                <div class="col-6">
+                    <h2>Quiénes somos</h2>
+                    <p>Somos una empresa que se encarga del cuidado de las personas. Si usted
+                        necesita algún tipo de ayuda no dude en contactar con nosotros.
+                    </p>
+                </div>
+                <div class="col-6">
+                    <h2>¿A quién está enfocada nuestra aplicación?</h2>
+                    <p>A todo tipo de público.</p>
+                    <ul>
+                        <li>Tanto a niños</li>
+                        <li>A personas mayores</li>
+                        <li>A personas discapacitadas</li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <h2>¿Cómo funciona la app?</h2>
+                    <p>Primeramente has de haber aceptado la política de uso nada más recargar la página. Una vez
+                        hecho eso, pulse en el botón de abajo y le llevará directamente al formulario que deberá
+                        rellenar para que le proporcionemos ayuda.
+                    </p>
+                </div>
+            </article>
+            <button type="button" class="btn btn-primary"><a href="./form.html" class="text-light">Solicitar cuidado
+            </a></button>
         </section>
     </main>
+    <footer class="bg-gradient3 p-5 text-center">
+        <h3>Preguntas frecuentes</h3>
+        <div class="p-5 d-inline-flex col-12">
+            <ul class="list-unstyled col-4">
+                <li>¿Dónde estamos?</li>
+                <li>Redes sociales</li>
+                <li>Cookies</li>
+                <li>Colaboraciones</li>
+                <li>Aseguradoras</li>
+            </ul>
+            <ul class="list-unstyled col-4">
+                <li>Privacidad</li>
+                <li>Nuestra historia</li>
+                <li>Como ayudarnos</li>
+                <li>Métodos de pago</li>
+                <li>Opiniones</li>
+            </ul>
+            <ul class="list-unstyled col-4">
+                <li>Integrantes</li>
+                <li>Linkedin</li>
+                <li>Sede</li>
+                <li>Metodología</li>
+                <li>Más datos</li>
+            </ul>
+        </div>
+        <div class="pb-3">
+            <span>Puede llamarnos a través de los siguientes números de teléfono <strong>948 00 00 00</strong>
+            o <strong>666 00 00 00</strong></span>
+        </div>
+        <div class="col-12">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a>
+        </div>
+    </footer>
 </body>
 <script type='module' src='./front/homePage.js'></script>
 

@@ -147,7 +147,7 @@ input[type=range] {
   transition-duration: 3s;
 } 
 
-/* @keyframes animation {
+@keyframes animation {
   from {
     visibility: visible;
     opacity: 1;
@@ -156,4 +156,46 @@ input[type=range] {
     visibility: hidden;
     opacity: 0;
   }
-} */
+} 
+
+@keyframes animation2 {
+  from{
+    visibility: hidden;
+    opacity: 0;
+  }
+  to{
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.bg-cookies{
+  background-image: url('../img/cookies.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modalText{
+  color: black;
+  background-color: white;
+  text-align: center;
+}
+
+.bg-gradient{
+  background: linear-gradient(45deg, #17a2b8, white);
+}
+.bg-gradient2{
+  border-bottom: #000000 solid 5px;
+  background: linear-gradient(45deg, white, #17a2b8);
+}
+.bg-gradient3{
+  border-top: #000000 solid 5px;
+  background: linear-gradient(45deg, white, #17a2b8);
+}
+.transformOpacity{
+  animation-name: animation2;
+  animation-duration: 5s;
+}
+.imgLogo{
+  width: 100px;
+}
