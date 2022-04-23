@@ -7,7 +7,7 @@ function empty(value)
     }
 }
 
-let emailPatron = /[.][]/;
+let emailPatron = /[.][@]/;
 
 function regularExpresionVeriffier(inputValue, patron)
 {

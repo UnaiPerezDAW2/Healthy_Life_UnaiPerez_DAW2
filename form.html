@@ -29,7 +29,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-info text-light">
             <a class="navbar-brand text-light font-weight-bold blackShadow" style="font-size: 1.6em;" href="#"
-                id="locationReload" onclick="reload()">Healthy Life</a>
+                id="logoReload">Healthy Life</a>
             <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
                 data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -47,6 +47,7 @@
     </header>
     <main>
         <section class="container-fluid pb-lg-5 pt-lg-5 backgroundNiños">
+            <a href="./index.html" class="bg-light roundedBorder pr-5 pl-5 pt-1 pb-1">Volver</a>
             <h2 class="d-none">Healthy Life</h2>
             <form action="back/database.php" method="post">
                 <article class="row text-center d-block">
@@ -97,11 +98,12 @@
                     <h3>Formación</h3>
                     <div class="form-group">
                         <label class="d-none" for="Localidad"></label>
-                        <select class="form-control col-lg-5 m-auto needToVeriffy" name="formacion" id="formacion" multiple required>
-                            <option>Ninguna</option>
-                            <option>Experimentado/a en cuidados, 2 años mínimo</option>
-                            <option>Profesor/a de infantil</option>
-                            <option>Auxiliar de enfermería</option>
+                        <select class="form-control col-lg-5 m-auto needToVeriffy" name="formacion" id="formacion">
+                            <option value="default">Seleccione formación</option>
+                            <option value="ninguna">Ninguna</option>
+                            <option value="experimentado">Experimentado/a en cuidados, 2 años mínimo</option>
+                            <option value="profeinfantil">Profesor/a de infantil</option>
+                            <option value="auxiliar">Auxiliar de enfermería</option>
                         </select>
                     </div>
                 </article>

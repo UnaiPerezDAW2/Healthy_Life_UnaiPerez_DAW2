@@ -199,3 +199,9 @@ input[type=range] {
 .imgLogo{
   width: 100px;
 }
+.quitarSub{
+  text-decoration: none;
+}
+li[class='scaleHover']:hover{
+  transform: scale(1.2, 1.2);
+}

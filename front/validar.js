@@ -9,6 +9,12 @@ window.onload = () => {
 
     let verifiedData = document.querySelectorAll('.needToVeriffy');
 
+    let logoReload = document.querySelector('#logoReload');
+
+    logoReload.addEventListener('click', function(){
+        window.location = "../index.html";
+    });
+
     select.addEventListener('change', function (e) {
         let image = new Image();
         image.src = `img/${select.value}.jpg`;
@@ -33,8 +39,4 @@ window.onload = () => {
         });
     });
 
-}
-
-function reload(){
-    location.reload;
 }
