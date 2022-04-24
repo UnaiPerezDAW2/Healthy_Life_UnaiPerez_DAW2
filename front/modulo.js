@@ -7,7 +7,7 @@ function empty(value)
     }
 }
 
-let emailPatron = /[.][@]/;
+let emailPatron = /[\w]{1,50}[@](gmail|hotmail|yahoo|familiados)(.com|.es)$/;
 
 function regularExpresionVeriffier(inputValue, patron)
 {

@@ -202,6 +202,6 @@ input[type=range] {
 .quitarSub{
   text-decoration: none;
 }
-li[class='scaleHover']:hover{
+li[class='scaleHover']:hover, img[src='./img/LogoH.ico']:hover{
   transform: scale(1.2, 1.2);
 }
