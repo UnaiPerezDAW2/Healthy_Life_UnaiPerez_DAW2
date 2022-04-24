@@ -1,6 +1,8 @@
 import {empty, emailPatron, regularExpresionVeriffier} from './modulo.js';
 
 window.onload = () => {
+    const INPUT_CORRECTO = '2px solid green';
+
     let contadorDeVerificaciones = 0;
     let submit = document.querySelector('#submit');
 
@@ -54,13 +56,22 @@ window.onload = () => {
             } else {
                 element.style.border = '2px solid green';
             }
-
-            if(contadorDeVerificaciones <= 4){
-                submit.setAttribute('disabled', true);
-            } else {
-                submit.setAttribute('disabled', false);
-            }
         });
     });
 
+    verifiedData.forEach(element => {
+        contadorDeVerificaciones = 0;   
+        element.addEventListener('blur', function(){
+            if(element.style.border == INPUT_CORRECTO){
+                contadorDeVerificaciones++;
+            } 
+
+            if(contadorDeVerificaciones == 4){
+                alert(contadorDeVerificaciones);
+                submit.setAttribute('disabled', false);
+            } else {
+                submit.setAttribute('disabled', true);
+            }
+        });
+    });
 }
