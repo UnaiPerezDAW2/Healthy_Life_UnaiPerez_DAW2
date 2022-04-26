@@ -1,13 +1,15 @@
-import {empty, emailPatron, regularExpresionVeriffier} from './modulo.js';
+import {empty, emailPatron, regularExpresionVeriffier, telfFijo, telfSmart} from './modulo.js';
+
+let verifiedData;
+let submit;
 
 window.onload = () => {
-    const INPUT_CORRECTO = '2px solid green';
-
-    let contadorDeVerificaciones = 0;
-    let submit = document.querySelector('#submit');
+    submit = document.getElementById('submit');
 
     let emailInput = document.querySelector('#email');
     let emailP = document.querySelector('#emailChecked');
+    let telf = document.querySelector('#numerotelefono');
+    let inputTelf = document.querySelector('#inputTelf');
 
     let divrange = document.getElementById('valueOfRange');
     let range = document.getElementById('dineroHora');
@@ -15,7 +17,8 @@ window.onload = () => {
     let sectionBackground = document.querySelector('.backgroundNiños');
     let select = document.querySelector('#tipoCuidado');
 
-    let verifiedData = document.querySelectorAll('.needToVeriffy');
+    verifiedData = document.querySelectorAll('.desbloqueoDeBoton');
+    let needToVeriffy = document.querySelectorAll('.needToVeriffy');
 
     let logoReload = document.querySelector('#logoReload');
 
@@ -41,37 +44,54 @@ window.onload = () => {
         if(!regularExpresionVeriffier(emailInput.value, emailPatron)){
             emailP.classList.add('text-danger');
             emailP.classList.remove('text-success');
-            emailP.innerHTML = "Introduce el correo electrónico de forma correcta";
+            emailInput.style.border = '2px solid red';
+            emailInput.classList.remove('desbloqueoDeBoton');
+            emailP.innerHTML = "Introduce el corrinputTelfeo electrónico de forma correcta";
         } else {
             emailP.classList.remove('text-danger');
             emailP.classList.add('text-success');
+            emailInput.style.border = '2px solid green';
             emailP.innerHTML = "Email correcto ✓";
+            emailInput.classList.add('desbloqueoDeBoton');
+
+        }
+    });
+
+    telf.addEventListener('blur', function(){
+        if(!regularExpresionVeriffier(telf.value, telfFijo) || !regularExpresionVeriffier(telf.value, telfSmart)){
+            inputTelf.classList.add('text-danger');
+            inputTelf.classList.remove('text-success');
+            inputTelf.innerHTML = "Introduce el numero de teléfono de forma correcta";
+            telf.style.border = '2px solid red';
+            telf.classList.remove('desbloqueoDeBoton');
+        } else {
+            inputTelf.classList.remove('text-danger');
+            inputTelf.classList.add('text-success');
+            telf.style.border = '2px solid green';
+            inputTelf.innerHTML = "Teléfono correcto ✓";
+            telf.classList.add('desbloqueoDeBoton');
         }
     });
     
-    verifiedData.forEach(element => {
+    needToVeriffy.forEach(element => {
         element.addEventListener('blur', function(){
             if(empty(element.value)){
                 element.style.border = '2px solid red';
+                element.classList.remove('desbloqueoDeBoton');
             } else {
                 element.style.border = '2px solid green';
-            }
-        });
-    });
-
-    verifiedData.forEach(element => {
-        contadorDeVerificaciones = 0;   
-        element.addEventListener('blur', function(){
-            if(element.style.border == INPUT_CORRECTO){
-                contadorDeVerificaciones++;
-            } 
-
-            if(contadorDeVerificaciones == 4){
-                alert(contadorDeVerificaciones);
-                submit.setAttribute('disabled', false);
-            } else {
-                submit.setAttribute('disabled', true);
+                element.classList.add('desbloqueoDeBoton');
             }
         });
     });
 }
+
+setInterval(function(){
+    verifiedData = document.querySelectorAll('.desbloqueoDeBoton');
+    submit = document.getElementById('submit');
+    if(verifiedData.length < 4){
+        submit.setAttribute('disabled', true);
+    } else {
+        submit.removeAttribute('disabled');
+    }
+}, 1000);

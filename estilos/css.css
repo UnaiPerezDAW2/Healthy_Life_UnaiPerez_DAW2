@@ -205,3 +205,6 @@ input[type=range] {
 li[class='scaleHover']:hover, img[src='./img/LogoH.ico']:hover{
   transform: scale(1.2, 1.2);
 }
+.desbloqueoDeBoton{
+  
+}
