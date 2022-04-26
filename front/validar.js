@@ -4,6 +4,7 @@ let verifiedData;
 let submit;
 
 window.onload = () => {
+    //Variables
     submit = document.getElementById('submit');
 
     let emailInput = document.querySelector('#email');
@@ -22,10 +23,12 @@ window.onload = () => {
 
     let logoReload = document.querySelector('#logoReload');
 
+    //Nos lleva a la Home Page
     logoReload.addEventListener('click', function(){
         window.location = "../index.html";
     });
 
+    //Cambia de fondo la página según el valor del select de tipo de cuidado
     select.addEventListener('change', function (e) {
         let image = new Image();
         image.src = `img/${select.value}.jpg`;
@@ -34,12 +37,14 @@ window.onload = () => {
         sectionBackground.style.backgroundRepeat = "no-repeat";
     });
 
+    //Muestra el valor del input range según varías de valor
     divrange.innerHTML = 12;
     range.value = 12;
     range.onchange = () => {
         divrange.innerHTML = range.value;
     }    
 
+    //Valida el input text del correo electrónico.
     emailInput.addEventListener('blur', function(){
         if(!regularExpresionVeriffier(emailInput.value, emailPatron)){
             emailP.classList.add('text-danger');
@@ -57,6 +62,7 @@ window.onload = () => {
         }
     });
 
+    //Valida el input text del telefono, similar al de arriba pero usamos otras validaciones.
     telf.addEventListener('blur', function(){
         if(!regularExpresionVeriffier(telf.value, telfFijo) || !regularExpresionVeriffier(telf.value, telfSmart)){
             inputTelf.classList.add('text-danger');
@@ -73,6 +79,7 @@ window.onload = () => {
         }
     });
     
+    //Valida los select y les pone estilos.
     needToVeriffy.forEach(element => {
         element.addEventListener('blur', function(){
             if(empty(element.value)){
@@ -86,6 +93,7 @@ window.onload = () => {
     });
 }
 
+//Comprueba que todos los inputs son válidos y así desbloquea el botón submit
 setInterval(function(){
     verifiedData = document.querySelectorAll('.desbloqueoDeBoton');
     submit = document.getElementById('submit');
