@@ -25,7 +25,7 @@ window.onload = () => {
 
     //Nos lleva a la Home Page
     logoReload.addEventListener('click', function(){
-        window.location = "../index.html";
+        window.location = "/Healthy_Life_UnaiPerez_DAW2/index.html";
     });
 
     //Cambia de fondo la página según el valor del select de tipo de cuidado

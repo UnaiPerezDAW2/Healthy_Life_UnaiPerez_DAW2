@@ -21,7 +21,7 @@ window.onload = () => {
             modal.classList.add('d-none');
         }, 2000);
         btnWindowChanger.addEventListener('click', function(){
-            window.location = "../form.html";
+            window.location = "/Healthy_Life_UnaiPerez_DAW2/form.html";
         });
     });
 
