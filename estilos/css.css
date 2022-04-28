@@ -140,8 +140,6 @@ input[type=range] {
 }
 
 .right-5000 {
-  /*animation-name: animation;
-  animation-duration: 2s;*/
   transform: translate(5000px, 0);
   transition-property: all;
   transition-duration: 3s;
@@ -205,6 +203,4 @@ input[type=range] {
 li[class='scaleHover']:hover, img[src='./img/LogoH.ico']:hover{
   transform: scale(1.2, 1.2);
 }
-.desbloqueoDeBoton{
-  
-}
+.desbloqueoDeBoton{}
