@@ -2,26 +2,40 @@ import {empty, emailPatron, regularExpresionVeriffier, telfFijo, telfSmart} from
 
 let verifiedData;
 let submit;
+let emailP;
+let inputTelf;
+let divrange;
+let sectionBackground;
+let select;
+let needToVeriffy;
+let logoReload;
+
+let emailInput;
+let formacion;
+let telf;
+let range;
+let localidad;
+let cuidado;
 
 window.onload = () => {
     //Variables
     submit = document.getElementById('submit');
 
-    let emailInput = document.querySelector('#email');
-    let emailP = document.querySelector('#emailChecked');
-    let telf = document.querySelector('#numerotelefono');
-    let inputTelf = document.querySelector('#inputTelf');
+    emailInput = document.querySelector('#email');
+    emailP = document.querySelector('#emailChecked');
+    telf = document.querySelector('#numerotelefono');
+    inputTelf = document.querySelector('#inputTelf');
 
-    let divrange = document.getElementById('valueOfRange');
-    let range = document.getElementById('dineroHora');
+    divrange = document.getElementById('valueOfRange');
+    range = document.getElementById('dineroHora');
 
-    let sectionBackground = document.querySelector('.backgroundNiños');
-    let select = document.querySelector('#tipoCuidado');
+    sectionBackground = document.querySelector('.backgroundNiños');
+    select = document.querySelector('#tipoCuidado');
 
     verifiedData = document.querySelectorAll('.desbloqueoDeBoton');
-    let needToVeriffy = document.querySelectorAll('.needToVeriffy');
+    needToVeriffy = document.querySelectorAll('.needToVeriffy');
 
-    let logoReload = document.querySelector('#logoReload');
+    logoReload = document.querySelector('#logoReload');
 
     //Nos lleva a la Home Page
     logoReload.addEventListener('click', function(){
@@ -97,9 +111,29 @@ window.onload = () => {
 setInterval(function(){
     verifiedData = document.querySelectorAll('.desbloqueoDeBoton');
     submit = document.getElementById('submit');
-    if(verifiedData.length < 4){
+    if(verifiedData.length < 5){
         submit.setAttribute('disabled', true);
     } else {
         submit.removeAttribute('disabled');
     }
-}, 1000);
+}, 100);
+
+document.querySelector("#submit").addEventListener('click', function(){
+    emailInput = document.querySelector("#email").value;
+    telf = document.querySelector("#numerotelefono").value;
+    cuidado = document.querySelector("#tipoCuidado").value;
+    range = document.querySelector("#dineroHora").value; 
+    formacion = document.querySelector("#formacion").value;  
+    localidad = document.querySelector('#localidad').value;
+    $.ajax({
+        url: "php.php",
+        type: "POST",
+        data:{
+            valor: valorImput
+        }
+    }).done(
+        function(res){
+            alert(res);
+        }
+    )
+});
