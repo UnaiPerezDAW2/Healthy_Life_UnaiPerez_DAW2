@@ -46,5 +46,16 @@ class Database implements IDataBase
         $this->controlador = new Controlador();
         return $this->controlador->getSolicitud();
     }
+
+    public function ejecutarSqlActualizacion($sql, $args)
+        {
+            $this->conexion = $this->conectar();
+            try {
+                $resultado = $this->conexion->prepare($sql);
+                $resultado->execute($args);
+            } catch (PDOException $e) {
+                echo "<p>Error en la consulta: " . $e->getMessage() . "</p>";
+            } 
+        }
 }
 ?>

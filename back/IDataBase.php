@@ -6,5 +6,7 @@ Interface IDataBase
     public function desconectar();
 
     public function ejecutarSql($valor);
+
+    public function ejecutarSqlActualizacion($sql, $args);
 }
 ?>

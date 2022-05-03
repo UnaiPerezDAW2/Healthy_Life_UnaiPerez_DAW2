@@ -45,7 +45,7 @@ window.onload = () => {
     //Cambia de fondo la página según el valor del select de tipo de cuidado
     select.addEventListener('change', function (e) {
         let image = new Image();
-        image.src = `img/${select.value}.jpg`;
+        image.src = `/Healthy_Life_UnaiPerez_DAW2/img/${select.value}.jpg`;
         sectionBackground.style.backgroundImage = `url(${image.src})`;
         sectionBackground.style.backgroundSize = "cover";
         sectionBackground.style.backgroundRepeat = "no-repeat";
