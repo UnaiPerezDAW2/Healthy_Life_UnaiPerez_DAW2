@@ -125,11 +125,16 @@ document.querySelector("#submit").addEventListener('click', function(){
     range = document.querySelector("#dineroHora").value; 
     formacion = document.querySelector("#formacion").value;  
     localidad = document.querySelector('#localidad').value;
+
     $.ajax({
-        url: "php.php",
+        url: "/Healthy_Life_UnaiPerez_DAW2/back/Ejecucion.php",
         type: "POST",
         data:{
-            valor: valorImput
+            email: emailInput,
+            telf: telf,
+            tipocuidado: cuidado,
+            tarifa: range,
+            formacion: formacion
         }
     }).done(
         function(res){
