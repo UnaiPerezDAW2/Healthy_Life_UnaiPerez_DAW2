@@ -1,9 +1,10 @@
 <?php
-include "./Controlador.php";
+include_once "./Controlador.php";
 include_once "./IDataBase.php";
 class Database implements IDataBase
 {
     private $conexion;
+    private $controlador;
 
     private const SERVIDOR_BD = "localhost";
     private const NOMBRE_BD = "healthylife";
@@ -38,6 +39,12 @@ class Database implements IDataBase
                 echo "<p>Error en la consulta: " . $e->getMessage() . "</p>";
             } 
             return $resultado;
+    }
+
+    public function devolverObjeto()
+    {
+        $this->controlador = new Controlador();
+        return $this->controlador->getSolicitud();
     }
 }
 ?>

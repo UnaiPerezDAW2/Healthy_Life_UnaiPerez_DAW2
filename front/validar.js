@@ -132,13 +132,14 @@ document.querySelector("#submit").addEventListener('click', function(){
         data:{
             email: emailInput,
             telf: telf,
-            tipocuidado: cuidado,
+            tipoCuidado: cuidado,
             tarifa: range,
-            formacion: formacion
+            formacion: formacion,
+            localidad: localidad
         }
     }).done(
         function(res){
-            alert(res);
+            console.log(res);
         }
     )
 });
