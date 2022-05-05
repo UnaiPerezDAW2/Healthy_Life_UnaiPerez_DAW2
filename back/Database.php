@@ -1,5 +1,5 @@
 <?php
-include_once "./Controlador.php";
+include "./Controlador.php";
 include_once "./IDataBase.php";
 class Database implements IDataBase
 {
@@ -29,6 +29,13 @@ class Database implements IDataBase
         $this->conexion = null;
     }
 
+    /**
+     * ejecutarSql()
+     * 
+     * @param String $sql
+     * 
+     * @return Array $resultado
+     */
     public function ejecutarSql($valor)
     {
         $resultado = "";
@@ -36,7 +43,7 @@ class Database implements IDataBase
             try {
                 $resultado = $this->conexion->query($valor);
             } catch (PDOException $e) {
-                echo "<p>Error en la consulta: " . $e->getMessage() . "</p>";
+                var_dump("Error en la consulta: ".$e->getMessage());
             } 
             return $resultado;
     }
@@ -44,7 +51,8 @@ class Database implements IDataBase
     public function devolverObjeto()
     {
         $this->controlador = new Controlador();
-        return $this->controlador->getSolicitud();
+        $solicitud = $this->controlador->getSolicitud();
+        return $solicitud;
     }
 
     public function ejecutarSqlActualizacion($sql, $args)
@@ -54,8 +62,7 @@ class Database implements IDataBase
                 $resultado = $this->conexion->prepare($sql);
                 $resultado->execute($args);
             } catch (PDOException $e) {
-                echo "<p>Error en la consulta: " . $e->getMessage() . "</p>";
+                var_dump("Error en la consulta: ".$e->getMessage());
             } 
         }
 }
-?>

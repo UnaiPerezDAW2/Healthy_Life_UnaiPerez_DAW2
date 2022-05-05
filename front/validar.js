@@ -139,7 +139,7 @@ document.querySelector("#submit").addEventListener('click', function(){
         }
     }).done(
         function(res){
-            console.log(res);
+            alert(res);
         }
     )
 });

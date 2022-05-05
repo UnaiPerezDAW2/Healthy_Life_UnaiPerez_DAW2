@@ -64,7 +64,7 @@ class Solicitud
      *
      * @return String $correo
      */
-    public function getCorreo()
+    public function getCorreo():String
     {
         return $this->correo;
     }
@@ -83,7 +83,7 @@ class Solicitud
      *
      * @return String
      */
-    public function getTelefono()
+    public function getTelefono():String
     {
         return $this->telefono;
     }
@@ -102,7 +102,7 @@ class Solicitud
      *
      * @return String
      */
-    public function getTipoDeCuidado()
+    public function getTipoDeCuidado():String
     {
         return $this->tipoDeCuidado;
     }
@@ -121,7 +121,7 @@ class Solicitud
      *
      * @return Int
      */
-    public function getTarifa()
+    public function getTarifa():Int
     {
         return $this->tarifa;
     }
@@ -140,7 +140,7 @@ class Solicitud
      *
      * @return String
      */
-    public function getFormacion()
+    public function getFormacion():String
     {
         return $this->formacion;
     }

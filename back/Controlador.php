@@ -1,5 +1,5 @@
 <?php
-include_once "./Solicitud.php";
+include "./Solicitud.php";
 class Controlador
 {
     private $email;
@@ -11,6 +11,8 @@ class Controlador
     private $formacion;
 
     private $localidad;
+
+    private $tarifa;
 
     private $solicitud;
 
