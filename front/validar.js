@@ -141,6 +141,7 @@ document.querySelector("#submit").addEventListener('click', function(){
         function(res){
             //window.location = '/Healthy_Life_UnaiPerez_DAW2/query.html';
             console.log(res);
+            document.body.innerHTML = res;
         }
     )
 });
