@@ -8,12 +8,12 @@ function empty(value)
 }
 
 let emailPatron = /[\w]{1,50}[@](gmail|hotmail|yahoo|familiados)(.com|.es)$/;
-let telfFijo = /[1-9]{9}/;
-let telfSmart = /[+34][1-9]{9}/
+let tel = /^9[0-9]{10}$/;
+let telfefonoPatron = /[+34][0-9]{9}/
 
 function regularExpresionVeriffier(inputValue, patron)
 {
     return patron.test(inputValue);
 }
 
-export {empty, regularExpresionVeriffier, emailPatron, telfFijo, telfSmart};
+export {empty, regularExpresionVeriffier, emailPatron, telfefonoPatron};

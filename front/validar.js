@@ -1,4 +1,4 @@
-import {empty, emailPatron, regularExpresionVeriffier, telfFijo, telfSmart} from './modulo.js';
+import {empty, emailPatron, regularExpresionVeriffier, telfefonoPatron} from './modulo.js';
 
 let verifiedData;
 let submit;
@@ -78,18 +78,18 @@ window.onload = () => {
 
     //Valida el input text del telefono, similar al de arriba pero usamos otras validaciones.
     telf.addEventListener('blur', function(){
-        if(!regularExpresionVeriffier(telf.value, telfFijo) || !regularExpresionVeriffier(telf.value, telfSmart)){
-            inputTelf.classList.add('text-danger');
-            inputTelf.classList.remove('text-success');
-            inputTelf.innerHTML = "Introduce el numero de teléfono de forma correcta";
-            telf.style.border = '2px solid red';
-            telf.classList.remove('desbloqueoDeBoton');
-        } else {
+        if(regularExpresionVeriffier(telf.value, telfefonoPatron)){
             inputTelf.classList.remove('text-danger');
             inputTelf.classList.add('text-success');
             telf.style.border = '2px solid green';
             inputTelf.innerHTML = "Teléfono correcto ✓";
             telf.classList.add('desbloqueoDeBoton');
+        } else {
+            inputTelf.classList.add('text-danger');
+            inputTelf.classList.remove('text-success');
+            inputTelf.innerHTML = "Introduce el numero de teléfono de forma correcta";
+            telf.style.border = '2px solid red';
+            telf.classList.remove('desbloqueoDeBoton');
         }
     });
     
