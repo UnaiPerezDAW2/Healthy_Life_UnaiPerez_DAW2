@@ -11,14 +11,15 @@
     //$result = $a->fetch(PDO::FETCH_ASSOC);
     $sql = 'INSERT INTO solicitudes VALUES(?,?,?,?,?,?,?)';
     $args = [$db->devolverObjeto()->getCorreo(),$db->devolverObjeto()->getTelefono(),$db->devolverObjeto()->getTipoDeCuidado(),
-    $db->devolverObjeto()->getTarifa(),$db->devolverObjeto()->getFormacion(), $db->devolverObjeto()->getLocalidad() ,date('Y:m:d')];
+    $db->devolverObjeto()->getTarifa(),$db->devolverObjeto()->getFormacion(), $db->devolverObjeto()->getLocalidad() ,date('Y:m:d H:i:s')];
 
     $db->ejecutarSqlActualizacion($sql, $args);
 
     //$a =  $db->ejecutarSql("SELECT nombre,,tarifa,tipoCuidado,formacion,localidad FROM cuidadores WHERE tarifa<='".$db->devolverObjeto()->getTarifa()."'
     //AND formacion LIKE '".$db->devolverObjeto()->getFormacion()."' AND tipoCuidado LIKE '". $db->devolverObjeto()->getTipoDeCuidado()."'");
 
-    $a =  $db->ejecutarSql("SELECT nombre,tarifa,tipoCuidado,formacion,localidad FROM cuidadores WHERE nombre LIKE 'Ana'");
+    $a =  $db->ejecutarSql("SELECT nombre,tarifa,tipoCuidado,formacion,localidad FROM cuidadores WHERE tarifa <= '" . $db->devolverObjeto()->getTarifa() . "' AND formacion LIKE '"
+    . $db->devolverObjeto()->getFormacion()."' and tipoCuidado LIKE '".$db->devolverObjeto()->getTipoDeCuidado()."'");
     if(empty($a)){
         echo "No se han encontrado cuidadores con las características que estás buscando";
     } else {

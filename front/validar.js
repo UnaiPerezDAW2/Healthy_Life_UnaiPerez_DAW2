@@ -139,8 +139,8 @@ document.querySelector("#submit").addEventListener('click', function(){
         }
     }).done(
         function(res){
-            alert(res);
-            window.location = '/Healthy_Life_UnaiPerez_DAW2/query.html';
+            //window.location = '/Healthy_Life_UnaiPerez_DAW2/query.html';
+            console.log(res);
         }
     )
 });
