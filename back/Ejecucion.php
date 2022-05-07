@@ -17,12 +17,16 @@
     if(empty($a)){
         echo "No se han encontrado cuidadores con las características que estás buscando";
     } else {
-        $resultado = "";
+        $resultado = '<div class="divPadreQuery">';
         foreach ($a as $key) {
+            $resultado .= '<div class="divQuery">';
             foreach ($key as $campo => $valor) {
                 if(!is_numeric($campo)){
-                    echo $valor;
+                    $resultado .= '<p>'.$valor.'</p>';
                 }
             }
+            $resultado .= '</div>';
         }
+        $resultado .= '</div>';
+        echo $resultado;
     }

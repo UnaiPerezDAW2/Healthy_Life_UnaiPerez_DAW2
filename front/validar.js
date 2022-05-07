@@ -139,9 +139,17 @@ document.querySelector("#submit").addEventListener('click', function(){
         }
     }).done(
         function(res){
-            //window.location = '/Healthy_Life_UnaiPerez_DAW2/query.html';
-            console.log(res);
-            document.body.innerHTML = res;
+            let formulario = document.querySelector('.formulario');
+            formulario.classList.add('d-none');
+            let cuidispo = document.querySelector('.cuidadoresDisponibles');
+            cuidispo.classList.remove('d-none');
+            cuidispo.innerHTML = res;
+            let divQuery = document.querySelectorAll('.divPadreQuery');
+            divQuery.forEach(element => {
+                frameElement.childNodes[2].innerHTML += "€";
+            });
+            let h2 = document.createElement('h2').innerHTML = 'CUIDADORES DISPONIBLES';
+            cuidispo.append(h2);
         }
     )
 });
