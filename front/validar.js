@@ -143,13 +143,27 @@ document.querySelector("#submit").addEventListener('click', function(){
             formulario.classList.add('d-none');
             let cuidispo = document.querySelector('.cuidadoresDisponibles');
             cuidispo.classList.remove('d-none');
-            cuidispo.innerHTML = res;
-            let divQuery = document.querySelectorAll('.divPadreQuery');
+            cuidispo.innerHTML += res;
+            let divQuery = document.querySelectorAll('.divQuery');
+            
             divQuery.forEach(element => {
-                frameElement.childNodes[2].innerHTML += "€";
+                $.ajax({
+                    url:'https://randomuser.me/api/',
+                    dataType: 'json',
+                    success: function(data){
+                        let img = document.createElement('img');
+                        img.src = data.results[0].picture.medium;
+                        img.classList.add('d-block', 'm-auto', 'mb-5');
+                        element.appendChild(img);
+
+                        let btn = document.createElement('button');
+                        btn.textContent = "Reservar cuidador";
+                        btn.classList.add('btn','btn-primary','mt-3', 'mb-3','btnReserva');
+                        element.appendChild(btn);
+                    }
+                });
+                element.childNodes[1].innerHTML += "€ Tarifa";
             });
-            let h2 = document.createElement('h2').innerHTML = 'CUIDADORES DISPONIBLES';
-            cuidispo.append(h2);
         }
     )
 });

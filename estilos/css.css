@@ -204,3 +204,13 @@ li[class='scaleHover']:hover, img[src='./img/LogoH.ico']:hover{
   transform: scale(1.2, 1.2);
 }
 .desbloqueoDeBoton{}
+
+.queryBorder{
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.divPadreQuery{
+  height: 1000px;
+}

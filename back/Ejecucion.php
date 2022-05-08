@@ -11,20 +11,23 @@
 
     $db->ejecutarSqlActualizacion($sql, $args);
 
-    $a =  $db->ejecutarSql("SELECT nombre,tarifa,tipoCuidado,formacion,localidad FROM cuidadores WHERE tarifa <= '" . $db->devolverObjeto()->getTarifa() . "' AND formacion LIKE '"
-    . $db->devolverObjeto()->getFormacion()."' and tipoCuidado LIKE '".$db->devolverObjeto()->getTipoDeCuidado()."'");
+    //$a =  $db->ejecutarSql("SELECT nombre,tarifa,tipoCuidado,formacion,localidad FROM cuidadores WHERE tarifa <= '" . $db->devolverObjeto()->getTarifa() . "' AND formacion LIKE '"
+    //. $db->devolverObjeto()->getFormacion()."' and tipoCuidado LIKE '".$db->devolverObjeto()->getTipoDeCuidado()."'");
+    $a =  $db->ejecutarSql("SELECT nombre,tarifa,tipoCuidado,formacion,localidad FROM cuidadores WHERE tarifa <= '" . $db->devolverObjeto()->getTarifa() . "' AND 
+    tipoCuidado LIKE '".$db->devolverObjeto()->getTipoDeCuidado()."'");
 
     if(empty($a)){
         echo "No se han encontrado cuidadores con las características que estás buscando";
     } else {
-        $resultado = '<div class="divPadreQuery">';
+        $resultado = '<div class="divPadreQuery col-lg-12 p-5 row">';
         foreach ($a as $key) {
-            $resultado .= '<div class="divQuery">';
+            $resultado .= '<div class="divQuery col-lg-3 m-5 bg-light text-center m-auto roundedBorder border-info">';
             foreach ($key as $campo => $valor) {
                 if(!is_numeric($campo)){
                     $resultado .= '<p>'.$valor.'</p>';
                 }
             }
+            //$resultado .= '<button class="btn btn-primary mb-3" id="bookCaretaker">Reservar cuidador</button>';
             $resultado .= '</div>';
         }
         $resultado .= '</div>';
