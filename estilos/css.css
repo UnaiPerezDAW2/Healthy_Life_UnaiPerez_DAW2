@@ -211,6 +211,6 @@ li[class='scaleHover']:hover, img[src='./img/LogoH.ico']:hover{
   border-style: solid;
 }
 
-.divPadreQuery{
-  height: 1000px;
+.divQuery{
+  background-color:rgba(255, 255, 255, 0.439);
 }

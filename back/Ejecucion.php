@@ -19,16 +19,16 @@
     if(empty($a)){
         echo "No se han encontrado cuidadores con las características que estás buscando";
     } else {
-        $resultado = '<div class="divPadreQuery col-lg-12 p-2 text-center m-auto">';
+        $resultado = '<div class="divPadreQuery col-lg-12 p-2 text-center row">';
         foreach ($a as $key) {
-            $resultado .= '<div class="divQuery col-lg-3 m-auto p-4 bg-light text-center roundedBorder">';
+            $resultado .= '<div class="divQuery col-lg-5 mt-5 ml-auto mr-auto p-4 text-center roundedBorder">';
             foreach ($key as $campo => $valor) {
                 if(!is_numeric($campo)){
                     $resultado .= '<p>'.$valor.'</p>';
                 }
             }
             //$resultado .= '<button class="btn btn-primary mb-3" id="bookCaretaker">Reservar cuidador</button>';
-            $resultado .= '</div><hr class="col-lg-3">';
+            $resultado .= '</div>';
         }
         $resultado .= '</div>';
         echo $resultado;

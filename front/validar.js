@@ -161,23 +161,23 @@ document.querySelector("#submit").addEventListener('click', function () {
                         btn.classList.add('btn', 'btn-primary', 'mt-3', 'mb-3', 'btnReserva');
                         element.appendChild(btn);
                     }
-                });
-                element.childNodes[1].innerHTML += "€/H";
-            });
-
-            let btnReserva = document.querySelectorAll('.btnReserva');
-            btnReserva.forEach(element => {
-                element.addEventListener('click', function () {
-                    $.ajax({
-                        url: "/Healthy_Life_UnaiPerez_DAW2/back/Ejecucion2.php",
-                        type: "POST",
-                        data: {
-                            email: emailInput
-                        }
-                    }).done(function (res) {
-
+                }).done(function (res) {
+                    let btnReserva = document.querySelectorAll('.btnReserva');
+                    btnReserva.forEach(element => {
+                        element.addEventListener('click', function () {
+                            $.ajax({
+                                url: "/Healthy_Life_UnaiPerez_DAW2/back/Ejecucion2.php",
+                                type: "POST",
+                                data: {
+                                    email: emailInput
+                                }
+                            }).done(function (res) {
+                                alert('Correo envíado a ' + emailInput);
+                            });
+                        });
                     });
                 });
+                element.childNodes[1].innerHTML += "€/H";
             });
         }
     )
