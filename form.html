@@ -43,8 +43,9 @@
     </header>
     <main>
         <section class="container-fluid pb-lg-5 pt-lg-5 backgroundNiños formulario">
-            <a href="./index.html" class="bg-light roundedBorder pr-5 pl-5 pt-1 pb-1">Volver</a>
-            <a href="./form.html" class="bg-light roundedBorder pr-5 pl-5 pt-1 pb-1">Reiniciar formulario</a>
+            <a href="./index.html" class="btn-outline-info btn roundedBorder pr-5 pl-5 pt-1 pb-1">Volver</a>
+            <a href="./form.html" class="btn-outline-info btn roundedBorder pr-5 pl-5 pt-1 pb-1">Reiniciar
+                formulario</a>
             <h2 class="d-none">Healthy Life</h2>
             <article class="row text-center d-block">
                 <h3>Correo electrónico</h3>
@@ -52,7 +53,8 @@
                 <div class="form-group">
                     <label class="d-none" for="Jornada"></label>
                     <input type="text" class="form-control col-lg-5 m-auto" name="email" id="email"
-                        placeholder="Introduce su email">
+                        placeholder="Introduce su email" data-toggle="tooltip" data-placement="top"
+                        title="Correo electrónico">
                     <p id="emailChecked" class="text-danger"></p>
                 </div>
             </article>
@@ -62,7 +64,8 @@
                 <div class="form-group">
                     <label class="d-none" for="Jornada"></label>
                     <input type="text" class="form-control col-lg-5 m-auto" name="numerotelefono" id="numerotelefono"
-                        placeholder="Inserte su número de teléfono">
+                        placeholder="Inserte su número de teléfono" data-toggle="tooltip" data-placement="top"
+                        title="Número de teléfono móvil">
                     <p id="inputTelf"></p>
                 </div>
             </article>
@@ -70,7 +73,8 @@
                 <h3>Tipo de cuidado</h3>
                 <div class="form-group">
                     <label class="d-none" for="Jornada"></label>
-                    <select class="form-control col-lg-5 m-auto needToVeriffy" name="tipoCuidado" id="tipoCuidado">
+                    <select class="form-control col-lg-5 m-auto needToVeriffy" name="tipoCuidado" id="tipoCuidado"
+                        data-toggle="tooltip" data-placement="top" title="Tipo de cuidado">
                         <option value="default">Seleccione tipo de cuidado</option>
                         <option value="Niños">Niño/a</option>
                         <option value="Personas mayores">Persona mayor</option>
@@ -122,6 +126,8 @@
         </section>
         <section class="cuidadoresDisponibles d-none backgroundNiños pb-5 container-fluid text-center">
             <h2 class="pt-5">CUIDADORES DISPONIBLES</h2>
+            <a href="./index.html" class="btn-outline-info roundedBorder pr-5 pl-5 pt-1 pb-1">Volver</a>
+            <a href="./form.html" class="btn-outline-info roundedBorder pr-5 pl-5 pt-1 pb-1">Reiniciar formulario</a>
         </section>
     </main>
     <footer class="p-5 text-center bg-info text-light">

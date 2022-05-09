@@ -105,6 +105,10 @@ window.onload = () => {
             }
         });
     });
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
 }
 
 //Comprueba que todos los inputs son válidos y así desbloquea el botón submit
@@ -173,6 +177,9 @@ document.querySelector("#submit").addEventListener('click', function () {
                                 }
                             }).done(function (res) {
                                 alert('Correo envíado a ' + emailInput);
+                                setTimeout(
+                                    location.reload(),
+                                    2);
                             });
                         });
                     });
