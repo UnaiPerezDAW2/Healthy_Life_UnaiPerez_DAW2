@@ -65,7 +65,7 @@ window.onload = () => {
             emailP.classList.remove('text-success');
             emailInput.style.border = '2px solid red';
             emailInput.classList.remove('desbloqueoDeBoton');
-            emailP.innerHTML = "Introduce el corrinputTelfeo electrónico de forma correcta";
+            emailP.innerHTML = "Introduce el correo electrónico de forma correcta";
         } else {
             emailP.classList.remove('text-danger');
             emailP.classList.add('text-success');
@@ -178,7 +178,7 @@ document.querySelector("#submit").addEventListener('click', function () {
                             }).done(function (res) {
                                 alert('Correo envíado a ' + emailInput);
                                 setTimeout(
-                                    location.reload(),
+                                    window.location = "/Healthy_Life_UnaiPerez_DAW2/PedirValoracion.html",
                                     2);
                             });
                         });

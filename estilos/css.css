@@ -218,3 +218,32 @@ li[class='scaleHover']:hover, img[src='./img/LogoH.ico']:hover{
 .bg-y{
   background-color: #FFD632;
 }
+
+.rotate-scale-up {
+	animation: rotate-scale-up 1s linear both;
+}
+
+@keyframes rotate-scale-up {
+  0% {
+    transform: scale(1) rotateZ(0);
+  }
+  50% {
+    transform: scale(2) rotateZ(180deg);
+  }
+  100% {
+    transform: scale(1) rotateZ(360deg);
+  }
+}
+
+.rotate-center {
+	animation: rotate-center 0.6s ease-in-out both;
+}
+
+ @keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
