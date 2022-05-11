@@ -10,12 +10,7 @@
 
     $db = new Database();
 
-    $sql = 'INSERT INTO valoraciones VALUES(?,?,?)';
-    $args = [$nombreValoracion, $valoracion, $comentario];
+    $sql = 'INSERT INTO valoracion VALUES(?,?,?,?)';
+    $args = [ date('Y:m:d'),$nombreValoracion, $valoracion, $comentario];
     $db->ejecutarSqlActualizacion($sql,$args);
-
-    $a =  $db->ejecutarSql("SELECT * FROM valoraciones LIMIT 5");
-    if(empty($a)){
-        echo "No hay valoraciones disponibles";
-    }
 ?>

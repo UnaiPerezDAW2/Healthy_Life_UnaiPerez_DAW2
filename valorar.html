@@ -28,22 +28,26 @@
 
 <body>
     <header class="bg-gradient2 p-5">
-        <img src="./img/LogoH.ico" alt="Logo" class="transformOpacity imgLogo" id="logoReload">
+        <a href="./index.html"><img src="./img/LogoH.ico" alt="Logo" class="transformOpacity imgLogo" id="logoReload"></a>
     </header>
     <main>
         <section class="container-fluid bg-gradient p-5 text-center">
             <article class="col-lg-12 text-center">
                 <h1>HEALTHY LIFE</h1>
+                <a href="./index.html" class="btn-outline-dark btn roundedBorder pr-5 pl-5 pt-1 pb-1 mt-4 mb-4">Volver</a>
                 <div class="col-12 float-right">
                     <article>
                         <h2 class="mt-4">¡Valoranos!</h2>
+                        <p>Su valoración nos ayuda a crecer y así poder dar de nosotros todo lo posible por satisfacerle. Muchas 
+                            gracias por su tiempo.
+                        </p>
                         <div class="mt-4">
                             <label for="nom">Nombre</label>
                             <input type="text" class="input-group form-control col-lg-6 m-auto" name="nom" id="nom" required>
                             <br>
                             <label for="valoracion">Valoración del servicio</label>
                             <br>
-                            <input type="range" name="valoracion" id="valoracion" min="1" max="5" step="1" value="3"
+                            <input type="range" name="valoracion" id="valoracion" min="1" max="5" step="0.5" value="3"
                                 class="col-lg-6 m-auto input-group ">
                             <div id="divRange" class="mb-3">
 
@@ -54,13 +58,14 @@
                             </div>
                             <br>
                         </div>
-                        <input name="btn" id="btn" class="btn btn-outline-dark mt-1 mb-4 pr-5 pl-5" type="button" value="Enviar">
                     </article>
                 </div>
             </article>
-            <p>¡Gracias!</p>
             <article class="container-fluid">
-                <button type="button" name="btn2" id="btn2" class="btn btn-outline-dark">Más comentarios</button>
+                <div>
+                    <input name="btn" id="btn" class="btn btn-outline-dark mt-1 mb-4 pr-5 pl-5" type="button" value="Enviar">
+                    <button type="button" name="btn2" id="btn2" class="btn btn-outline-dark mt-1 mb-4 pr-5 pl-5">Más comentarios</button>
+                </div>
                 <div class="mt-4" id="comentarios">
 
                 </div>

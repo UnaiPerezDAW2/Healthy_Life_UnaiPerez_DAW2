@@ -1,20 +1,19 @@
 let divRange;
 let btn = document.getElementById('btn');
 let btn2 = document.getElementById('btn2');
-let divCom;
+let divCom = document.getElementById('comentarios');
 let range;
 let nombre;
 let comentario;
 
 window.onload = () => {
     divrange = document.getElementById('divRange');
-    divCom = document.getElementById('comentarios');
     range = document.getElementById('valoracion');
     nombre = document.getElementById('nom');
     comentario = document.getElementById('comentario');
 
-    nombre.addEventListener('blur', function(){
-        if(nombre.value == ""){
+    nombre.addEventListener('blur', function () {
+        if (nombre.value == "") {
             nombre.style.border = "2px solid red";
             nombre.classList.remove('valido');
         } else {
@@ -23,8 +22,8 @@ window.onload = () => {
         }
     });
 
-    comentario.addEventListener('blur', function(){
-        if(comentario.value == ""){
+    comentario.addEventListener('blur', function () {
+        if (comentario.value == "") {
             comentario.style.border = "2px solid red";
             comentario.classList.remove('valido');
         } else {
@@ -32,7 +31,8 @@ window.onload = () => {
             comentario.classList.add('valido');
         }
     })
-
+    
+    range.value = 3;
     range.onchange = () => {
         divrange.innerHTML = range.value;
     }
@@ -47,18 +47,25 @@ window.onload = () => {
     }, 100);
 }
 
-btn.addEventListener('click', function(){
-    btn.onclick = () => {
-        $.ajax({
-            url: "/Healthy_Life_UnaiPerez_DAW2/back/Ejecucion3.php",
-            type: "POST",
-            data: {
-                nombre: nombre.value,
-                range: range.value,
-                comentario: comentario.value
-            }
-        }).done(function (res) {
-            console.log(res);
-        });
-    }
+btn.addEventListener('click', function () {
+    $.ajax({
+        url: "/Healthy_Life_UnaiPerez_DAW2/back/Ejecucion3.php",
+        type: "POST",
+        data: {
+            nombre: nombre.value,
+            range: range.value,
+            comentario: comentario.value
+        }
+    }).done(function (res) {
+        alert('¡Gracias por su valoración, nos ayuda mucho!');
+    });
+});
+
+btn2.addEventListener('click', function () {
+    $.ajax({
+        url: "/Healthy_Life_UnaiPerez_DAW2/back/Ejecucion4.php",
+        type: "POST"
+    }).done(function (res) {
+        divCom.innerHTML = res;
+    });
 });

@@ -1,4 +1,4 @@
-import { empty, emailPatron, regularExpresionVeriffier, telfefonoPatron } from './modulo.js';
+import { empty, emailPatron, regularExpresionVeriffier, telefonoPatron } from './modulo.js';
 
 let verifiedData;
 let submit;
@@ -78,7 +78,7 @@ window.onload = () => {
 
     //Valida el input text del telefono, similar al de arriba pero usamos otras validaciones.
     telf.addEventListener('blur', function () {
-        if (regularExpresionVeriffier(telf.value, telfefonoPatron)) {
+        if (regularExpresionVeriffier(telf.value, telefonoPatron)) {
             inputTelf.classList.remove('text-danger');
             inputTelf.classList.add('text-success');
             telf.style.border = '2px solid green';
