@@ -39,28 +39,32 @@
                         <h2 class="mt-4">¡Valoranos!</h2>
                         <div class="mt-4">
                             <label for="nom">Nombre</label>
-                            <input type="text" class="input-group form-control col-lg-6 m-auto" name="nom" id="nom">
+                            <input type="text" class="input-group form-control col-lg-6 m-auto" name="nom" id="nom" required>
                             <br>
                             <label for="valoracion">Valoración del servicio</label>
                             <br>
                             <input type="range" name="valoracion" id="valoracion" min="1" max="5" step="1" value="3"
-                                class="col-lg-6 m-auto">
-                            <div id="divRange">
+                                class="col-lg-6 m-auto input-group ">
+                            <div id="divRange" class="mb-3">
 
                             </div>
                             <div class="form-group">
                               <label for="comentario">Comentario</label>
-                              <textarea class="form-control col-lg-6 m-auto" name="comentario" id="comentario" rows="3"></textarea>
+                              <textarea class="form-control input-group col-lg-6 m-auto" name="comentario" id="comentario" rows="3" required></textarea>
                             </div>
                             <br>
-                            <p>Puede subir fotografías o un documento más extenso aquí</p>
-                            <input type="file" name="arch" id="arch">
                         </div>
-                        <input name="btn" id="btn" class="btn btn-primary m-5 pr-5 pl-5" type="button" value="Enviar">
+                        <input name="btn" id="btn" class="btn btn-outline-dark mt-1 mb-4 pr-5 pl-5" type="button" value="Enviar">
                     </article>
                 </div>
             </article>
-            <p>Gracias!</p>
+            <p>¡Gracias!</p>
+            <article class="container-fluid">
+                <button type="button" name="btn2" id="btn2" class="btn btn-outline-dark">Más comentarios</button>
+                <div class="mt-4" id="comentarios">
+
+                </div>
+            </article>
         </section>
     </main>
     <footer class="bg-gradient3 p-5 text-center">
