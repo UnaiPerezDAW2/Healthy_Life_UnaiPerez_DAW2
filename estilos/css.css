@@ -247,3 +247,9 @@ li[class='scaleHover']:hover, img[src='./img/LogoH.ico']:hover{
     transform: rotate(360deg);
   }
 }
+
+.bg-noticia{
+  background-image: url('../img/noticia.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

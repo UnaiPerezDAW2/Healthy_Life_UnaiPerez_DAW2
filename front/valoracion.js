@@ -31,7 +31,7 @@ window.onload = () => {
             comentario.classList.add('valido');
         }
     })
-    
+
     range.value = 3;
     range.onchange = () => {
         divrange.innerHTML = range.value;
@@ -67,5 +67,14 @@ btn2.addEventListener('click', function () {
         type: "POST"
     }).done(function (res) {
         divCom.innerHTML = res;
+        divCom.innerHTML += `<button type="btn" class="btn btn-outline-dark mt-3" id="btn3">Esconder valoraciones</button>`;
+        let btn3 = document.querySelector("#btn3");
+        btn3.addEventListener('click', function () {
+            divCom.innerHTML = "";
+        });
+        let valoraciones = document.querySelectorAll(".valoracion");
+        valoraciones.forEach(element => {
+            element.childNodes[4].innerHTML += "★";
+        });
     });
 });

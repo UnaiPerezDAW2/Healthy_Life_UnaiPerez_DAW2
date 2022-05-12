@@ -11,7 +11,7 @@
             $resultado .= '<div class="col-lg-5 mt-5 ml-auto mr-auto p-4 text-center roundedBorder valoracion divQuery">';
             foreach ($key as $campo => $valor) {
                 if(!is_numeric($campo)){
-                    $resultado .= '<p><b>'.$campo.'</b><br>'.$valor.'</p><hr>';
+                    $resultado .= '<p style="font-size:1.2em"><b>'.$campo.'</b><br>'.$valor.'</p><hr>';
                 }
             }
             $resultado .= '</div>';
