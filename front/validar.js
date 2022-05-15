@@ -169,11 +169,13 @@ document.querySelector("#submit").addEventListener('click', function () {
                     let btnReserva = document.querySelectorAll('.btnReserva');
                     btnReserva.forEach(element => {
                         element.addEventListener('click', function () {
+                            let nombreCuidador = element.parentElement.firstChild.lastChild.nodeValue;
                             $.ajax({
                                 url: "/Healthy_Life_UnaiPerez_DAW2/back/Ejecucion2.php",
                                 type: "POST",
                                 data: {
-                                    email: emailInput
+                                    email: emailInput,
+                                    nombreCuidador: nombreCuidador
                                 }
                             }).done(function (res) {
                                 alert('Correo envíado a ' + emailInput);
