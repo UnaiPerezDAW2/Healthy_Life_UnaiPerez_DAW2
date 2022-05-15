@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-05-2022 a las 20:36:56
+-- Tiempo de generación: 15-05-2022 a las 23:02:47
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.23
 
@@ -51,6 +51,24 @@ INSERT INTO `cuidadores` (`id`, `nombre`, `tipoCuidado`, `tarifa`, `formacion`, 
 (8, 'Maitane', 'Niños', 9, 'Profesor infantil', 'Pamplona'),
 (9, 'Unai', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Villava'),
 (10, 'Sandra', 'Personas mayores', 11, 'Ninguna', 'Barañain');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reservas`
+--
+
+CREATE TABLE `reservas` (
+  `emailSolicitante` varchar(100) NOT NULL,
+  `cuidador` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `reservas`
+--
+
+INSERT INTO `reservas` (`emailSolicitante`, `cuidador`) VALUES
+('unaiperez193@gmail.com', 'Maitane');
 
 -- --------------------------------------------------------
 
@@ -340,7 +358,20 @@ INSERT INTO `solicitudes` (`email`, `telefono`, `tipoCuidado`, `tarifa`, `formac
 ('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Profesor infantil', 'Burlada', '2022-05-10 23:35:44'),
 ('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Ninguna', 'Burlada', '2022-05-11 23:50:58'),
 ('unaiperez193@gmail.com', '+34666666666', 'Niños', 12, 'Ninguna', 'Rotxapea', '2022-05-12 00:24:25'),
-('unaiperez193@gmail.com', '+34666666666', 'Niños', 12, 'Ninguna', 'Villava', '2022-05-12 19:03:07');
+('unaiperez193@gmail.com', '+34666666666', 'Niños', 12, 'Ninguna', 'Villava', '2022-05-12 19:03:07'),
+('u@gmail.com', '+34666666666', 'Personas discapacitadas', 12, 'Ninguna', 'Barañain', '2022-05-15 17:14:24'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:14:34'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:15:25'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:15:56'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:17:02'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:17:29'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:18:05'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:18:16'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:18:40'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:19:02'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:19:34'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:19:51'),
+('unaiperez193@gmail.com', '+34666666666', 'Niños', 12, 'Experimentado 2 años min.', 'Rotxapea', '2022-05-15 22:26:14');
 
 -- --------------------------------------------------------
 
@@ -368,7 +399,8 @@ INSERT INTO `valoracion` (`Fecha`, `Nombre`, `Valoracion`, `Comentario`) VALUES
 ('2022-05-12', 'Pepe', 3, 'Es util'),
 ('2022-05-12', 'Pepe', 3, 'Es util'),
 ('2022-05-12', 'Pepe', 3, 'Es util'),
-('2022-05-12', 'Pepe', 3, 'Es util');
+('2022-05-12', 'Pepe', 3, 'Es util'),
+('2022-05-15', 'Pepe', 3.5, 'Hola, gracias por la ayuda!');
 
 --
 -- Índices para tablas volcadas
