@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-05-2022 a las 23:02:47
+-- Tiempo de generación: 16-05-2022 a las 21:55:42
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.23
 
@@ -68,7 +68,19 @@ CREATE TABLE `reservas` (
 --
 
 INSERT INTO `reservas` (`emailSolicitante`, `cuidador`) VALUES
-('unaiperez193@gmail.com', 'Maitane');
+('unaiperez193@gmail.com', 'Maitane'),
+('unaiperez193@gmail.com', 'Ana'),
+('unaiperez193@gmail.com', 'Ana'),
+('unaiperez193@gmail.com', 'Benzema'),
+('unaiperez193@gmail.com', 'Benzema'),
+('unaiperez193@gmail.com', 'Benzema'),
+('unaiperez193@gmail.com', 'Ana'),
+('unaiperez193@gmail.com', 'Ana'),
+('unaiperez193@gmail.com', 'Maitane'),
+('unaiperez193@gmail.com', 'Maitane'),
+('unaiperez193@gmail.com', 'Benzema'),
+('unaiperez193@gmail.com', 'Benzema'),
+('unaiperez193@gmail.com', 'Benzema');
 
 -- --------------------------------------------------------
 
@@ -80,7 +92,7 @@ CREATE TABLE `solicitudes` (
   `email` varchar(50) NOT NULL,
   `telefono` varchar(15) NOT NULL,
   `tipoCuidado` varchar(50) NOT NULL,
-  `tarifa` int(20) NOT NULL,
+  `tarifa` int(11) NOT NULL,
   `formacion` varchar(50) NOT NULL,
   `localidad` varchar(50) NOT NULL,
   `date` datetime NOT NULL
@@ -371,7 +383,16 @@ INSERT INTO `solicitudes` (`email`, `telefono`, `tipoCuidado`, `tarifa`, `formac
 ('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:19:02'),
 ('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:19:34'),
 ('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Experimentado 2 años min.', 'Barañain', '2022-05-15 22:19:51'),
-('unaiperez193@gmail.com', '+34666666666', 'Niños', 12, 'Experimentado 2 años min.', 'Rotxapea', '2022-05-15 22:26:14');
+('unaiperez193@gmail.com', '+34666666666', 'Niños', 12, 'Experimentado 2 años min.', 'Rotxapea', '2022-05-15 22:26:14'),
+('unaiperez193@gmail.com', '+34666666666', 'Niños', 12, 'Ninguna', 'Pamplona', '2022-05-16 20:25:56'),
+('unaiperez193@gmail.com', '+34666666666', 'Niños', 12, 'Ninguna', 'Rotxapea', '2022-05-16 21:12:08'),
+('unaiperez193@gmail.com', '+34666666666', 'Niños', 15, 'Ninguna', 'Burlada', '2022-05-16 21:20:51'),
+('unaiperez193@gmail.com', '+34666666666', 'Niños', 15, 'Experimentado 2 años min.', 'Burlada', '2022-05-16 21:25:48'),
+('unaiperez193@gmail.com', '+34666666666', 'Niños', 15, 'Experimentado 2 años min.', 'Burlada', '2022-05-16 21:30:48'),
+('unaiperez193@gmail.com', '+34666666666', 'Niños', 15, 'Experimentado 2 años min.', 'Barañain', '2022-05-16 21:41:06'),
+('unaiperez193@gmail.com', '+34666666666', 'Niños', 14, 'Experimentado 2 años min.', 'Barañain', '2022-05-16 21:49:14'),
+('unaiperez193@gmail.com', '+34666666666', 'Niños', 12, 'Profesor infantil', 'Barañain', '2022-05-16 21:54:28'),
+('unaiperez193@gmail.com', '+34666666666', 'Personas mayores', 12, 'Ninguna', 'Rotxapea', '2022-05-16 21:54:43');
 
 -- --------------------------------------------------------
 
@@ -380,7 +401,7 @@ INSERT INTO `solicitudes` (`email`, `telefono`, `tipoCuidado`, `tarifa`, `formac
 --
 
 CREATE TABLE `valoracion` (
-  `Fecha` date NOT NULL,
+  `Fecha` datetime NOT NULL,
   `Nombre` varchar(50) NOT NULL,
   `Valoracion` float NOT NULL,
   `Comentario` longtext NOT NULL
@@ -391,16 +412,23 @@ CREATE TABLE `valoracion` (
 --
 
 INSERT INTO `valoracion` (`Fecha`, `Nombre`, `Valoracion`, `Comentario`) VALUES
-('0000-00-00', '4.5', 0, '2022:05:12'),
-('2022-05-12', 'Hola2', 3, 'Va bien3'),
-('2022-05-12', 'Hola2', 3, 'Va bien3'),
-('2022-05-12', 'Hola2', 3, 'Va bien3'),
-('2022-05-12', 'Pepe', 4.5, 'Es util'),
-('2022-05-12', 'Pepe', 3, 'Es util'),
-('2022-05-12', 'Pepe', 3, 'Es util'),
-('2022-05-12', 'Pepe', 3, 'Es util'),
-('2022-05-12', 'Pepe', 3, 'Es util'),
-('2022-05-15', 'Pepe', 3.5, 'Hola, gracias por la ayuda!');
+('0000-00-00 00:00:00', '4.5', 0, '2022:05:12'),
+('2022-05-12 00:00:00', 'Hola2', 3, 'Va bien3'),
+('2022-05-12 00:00:00', 'Hola2', 3, 'Va bien3'),
+('2022-05-12 00:00:00', 'Hola2', 3, 'Va bien3'),
+('2022-05-12 00:00:00', 'Pepe', 4.5, 'Es util'),
+('2022-05-12 00:00:00', 'Pepe', 3, 'Es util'),
+('2022-05-12 00:00:00', 'Pepe', 3, 'Es util'),
+('2022-05-12 00:00:00', 'Pepe', 3, 'Es util'),
+('2022-05-12 00:00:00', 'Pepe', 3, 'Es util'),
+('2022-05-15 00:00:00', 'Pepe', 3.5, 'Hola, gracias por la ayuda!'),
+('2022-05-16 00:00:00', 'Unai', 4, 'Muy bien'),
+('2022-05-16 00:00:00', 'Madagascar', 5, 'Me ha gustado mucho!'),
+('2022-05-16 00:00:00', 'Pepe', 5, 'Excelente.'),
+('2022-05-16 21:36:55', 'Amén', 3.5, 'Genial y fabuloso'),
+('2022-05-16 21:43:43', 'África', 4.5, 'Me ha gustado mucho'),
+('2022-05-16 21:51:45', 'Unai', 4.5, 'Muy útil :)'),
+('2022-05-16 21:52:39', 'Jos', 1.5, 'No me ha gustado');
 
 --
 -- Índices para tablas volcadas
